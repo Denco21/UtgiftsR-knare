@@ -56,7 +56,7 @@ namespace MinBankKonto
         {
             if (amount <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(amount), "Amount of deposit must be positive");
+                throw new ArgumentOutOfRangeException(nameof(amount), "Depositionsbeloppet måste vara positivt");
             }
             var tain = new Transaktion(amount, date, note); // det är en konstruktor som skapar en ny instans av objektet Transaktion 
             trans.Add(tain);
@@ -66,32 +66,15 @@ namespace MinBankKonto
         {
             if (amount <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(amount), "Amount of withdrawal must be positive");
+                throw new ArgumentOutOfRangeException(nameof(amount), "Beloppet för uttag måste vara positivt");
             }
             if (Balans - amount < 0)
             {
-                throw new InvalidOperationException("Not sufficient funds for this withdrawal");
+                throw new InvalidOperationException("Inte tillräckliga medel för detta uttag\r\n");
             }
             var taut = new Transaktion(-amount, date, note);
             trans.Add(taut);
         }
-
-
-        //public string GeMigKontoHistorik()
-        //{
-          
-
-        //    var visa = new StringBuilder(); //StringBuilder är en klass som används för att skapa en sträng som kan ändras utan att skapa en ny strängobjekt. 
-        //    visa.AppendLine("Datum\t\t\tBelopp\t\tNoteri");
-
-        //    foreach (var item in trans)
-        //    { 
-        //        visa.AppendLine($"{item.Datum.ToLocalTime()}\t{item.Amount}\t{item.Anteckning}");
-
-        //    }
-          
-        //    return visa.ToString();
-        //}
 
 
     }

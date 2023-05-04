@@ -12,7 +12,7 @@ namespace MinBankKonto
         public static void Wälkomen()
 
         {
-            Console.WriteLine("Välkomen till Denis BankKoll.");
+            Console.WriteLine("Välkomen till Denis Bank Koll.");
             Console.WriteLine("**************************");
             Console.WriteLine(                                   );
         }
